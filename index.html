@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let humanScore = 0;
+        let computerScore = 0;
+        let choices = ["rock", "paper","scissors"];    
+        let humanSelection;
+        let computerSelection;        
+
+        playGame();
+
+        function getComputerChoice(){
+            let random = Math.floor(Math.random() * 3);
+
+            let computerChoice = choices[random];
+
+            console.log("Computer choose: " + computerChoice);
+            
+            return computerChoice;
+        }
+
+        function getHumanChoice(){
+            let humanChoice = null;
+
+            while(humanChoice == null || humanChoice != choices[0] && humanChoice != choices[1] && humanChoice != choices[2]){
+                humanChoice = prompt(
+                "Enter your choice: "
+                );
+                humanChoice = humanChoice.toLowerCase();
+            }
+
+            console.log("You choose: " + humanChoice);
+
+            return humanChoice;
+        }
+
+        function playRound(humanChoice, computerChoice){
+            if(computerChoice == choices[0] && humanChoice == choices[2]){
+                console.log("You lose Rock beats Scissors.");
+                computerScore++;
+            }else
+            if(humanChoice == choices[0] && computerChoice == choices[2]){
+                console.log("You win Rock beats Scissors.");
+                humanScore++;
+            }else
+            if(computerChoice == choices[2] && humanChoice == choices[1]){
+                console.log("You lose Scissors beat Paper.");
+                computerScore++;
+            }else
+            if(humanChoice == choices[2] && computerChoice == choices[1]){
+                console.log("You win Scissors beat Paper.");
+                humanScore++;
+            }else
+            if(computerChoice == choices[1] && humanChoice == choices[0]){
+                console.log("You lose Paper beats Rock.");
+                computerScore++;
+            }else
+            if(humanChoice == choices[1] && computerChoice == choices[0]){
+                console.log("You win Paper beats Rock.");
+                humanScore++;
+            }else
+            if(humanChoice == computerChoice){
+                console.log("Draw.");
+            }
+        }
+
+        function playGame(){
+            while(humanScore < 5 && computerScore < 5){
+                humanSelection = getHumanChoice();
+                computerSelection = getComputerChoice();
+                playRound(humanSelection, computerSelection);
+                console.log("Your score: " + humanScore + ". " + "Computer score: " + computerScore);
+            }
+        }
+    </script>
+</body>
+</html>
