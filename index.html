@@ -12,6 +12,7 @@
         let choices = ["rock", "paper","scissors"];    
         let humanSelection;
         let computerSelection;        
+        let round = 1;
 
         playGame();
 
@@ -72,6 +73,7 @@
 
         function playGame(){
             while(humanScore < 5 && computerScore < 5){
+                console.log("Round: " + round++);
                 humanSelection = getHumanChoice();
                 computerSelection = getComputerChoice();
                 playRound(humanSelection, computerSelection);
