@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    outline: none;
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    background-color:#DDDDDD;
+    padding-right: 7vw;
+    transition: 500ms;
+}
+
+.leftSide{
+    display: grid;
+    justify-content: center;
+}
+
+.humanChoice{
+    display: grid;
+    justify-items: center;
+}
+
+.inputChoice{
+    transition: 200ms;
+}
+
+.inputChoice:hover{
+    transform: translateY(-10px);
+}
+
+.inputChoice:active{
+    transform: translateY(2px);
+}
+
+.computerChoice{
+    transition: 200ms;
+}
+
+.leftSide h1{
+    text-align: center;
+}
+
+.rightSide{
+    display: grid;
+    justify-content: center;
+}
+
+.rightSide h1{
+    text-align: center;
+}
+
+.leftSide span, .rightSide span{
+    background-color: rgba(0, 0, 0, 0.400);
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+}
+
+.dashboard{
+    background-color: rgba(0, 0, 0, 0.400);
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.center, .center p{
+    text-align: center;
+    display: grid;
+    font-size: 150%;
+    align-items: center;
+    justify-content: center;
+}
+
+.startGame{
+    margin: auto;
+    border: none;
+    background-color: transparent;
+    transition: 300ms;
+}
+
+.startGame::backdrop{
+    backdrop-filter: blur(5px);
+}
+
+.btnStartGame{
+    border: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color:springgreen;
+    transition: 300ms;
+    
+}
+
+.btnStartGame:hover{
+    background-color: rgba(0, 255, 128, 0.700);
+    transform: translateY(-2px);
+}
